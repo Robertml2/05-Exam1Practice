@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 1.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Madison Robertson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -92,7 +92,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -120,10 +120,23 @@ def run_test_problem1a():
     print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
+
+
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
+    expected = -1.9938
+    answer = problem1a(4, 5)
+    print()
+    print('Test 3 expected:', expected, 'approximately')
+    print('       actual:  ', answer)
+
+    expected = 1.135
+    answer = problem1a(1, -2)
+    print()
+    print('Test 4 expected:', expected, 'approximately')
+    print('       actual:  ', answer)
 
 
 def problem1a(m, n):
@@ -152,6 +165,13 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
+    import math
+    total = 0
+    for k in range (m**2, n**2+1):
+        total = total + math.sin(k)
+    return total
+
+
 
 
 def run_test_problem1b():
@@ -170,6 +190,30 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    expected = 5
+    answer = problem1a(7, 3)
+    print()
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 44
+    answer = problem1a(5, 40)
+    print()
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 1
+    answer = problem1a(2, 1)
+    print()
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 5
+    answer = problem1a(3, 5)
+    print()
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def problem1b(m, f):
