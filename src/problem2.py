@@ -115,13 +115,13 @@ def problem2a(circle, rectangle, window):
     window.render()
     window.continue_on_mouse_click()
     line = rg.Line(rectangle.corner_1, rectangle.corner_2)
+    line.arrow = 'first'
     line.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
-    line2 = rg.Line(rectangle.corner_1, rectangle.corner_2)
-    line2.attach_to(window)
-    fill_color = circle.fill_color
+    fill_color = rectangle.outline_color
     circle.fill_color = fill_color
+    window.render()
 
 
 
@@ -161,7 +161,7 @@ def run_test_problem2b():
     window.close_on_mouse_click()
 
 
-def problem2b(rect, n, delta, win):
+def problem2b(rectangle, n, delta, window):
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -199,6 +199,18 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+
+    rectangle.attach_to(window)
+    window.render()
+    for k in range(n):
+        new_corner = rg.Point(k*2*delta*rectangle.corner_1.x, k*2*delta*rectangle.corner_1.y)
+        new_corner_2 = rg.Point(k*2*delta*rectangle.corner_2.x, k*2*delta*rectangle.corner_2.y)
+        rectangle = rg.Rectangle(new_corner, new_corner_2)
+        rectangle.attach_to(window)
+        window.render()
+
+
+
 
 
 # ----------------------------------------------------------------------
