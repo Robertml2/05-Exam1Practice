@@ -114,7 +114,10 @@ def problem2a(circle, rectangle, window):
     rectangle.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
-    line = rg.Line(rectangle.corner_1, rectangle.corner_2)
+    if rectangle.corner_1.x < rectangle.corner_2.x:
+        line = rg.Line(rectangle.corner_1, rectangle.corner_2)
+    else:
+        line = rg.Line(rectangle.corner_2, rectangle.corner_1)
     line.arrow = 'first'
     line.attach_to(window)
     window.render()
