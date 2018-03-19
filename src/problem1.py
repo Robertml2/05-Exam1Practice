@@ -249,8 +249,8 @@ def problem1b(m, f):
 
     count = 0
 
-    for k in range(m, m*f):
-        if is_prime(m) <= m*f:
+    for k in range(m-1, (m*f)+1):
+        if is_prime(k):
             count = count +1
 
     return count
@@ -354,11 +354,12 @@ def problem1c(n):
     # ------------------------------------------------------------------
 
     total = 1
-    for k in range(n):
+    for k in range(2,n+1):
         if is_prime(k):
             total = total*k
-    sum_of_digits()
-    return total
+        sum_of_digits(total)
+
+    return sum_of_digits(total)
 
 
 
