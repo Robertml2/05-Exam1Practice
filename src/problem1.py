@@ -247,6 +247,14 @@ def problem1b(m, f):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
 
+    count = 0
+
+    for k in range(m, m*f):
+        if is_prime(m) <= m*f:
+            count = count +1
+
+    return count
+
 
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
@@ -344,6 +352,15 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
+
+    total = 1
+    for k in range(n):
+        if is_prime(k):
+            total = total*k
+    sum_of_digits()
+    return total
+
+
 
 
 # ----------------------------------------------------------------------
