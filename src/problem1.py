@@ -192,31 +192,33 @@ def run_test_problem1b():
     print('--------------------------------------------------')
 
     expected = 5
-    answer = problem1a(7, 3)
+    answer = problem1b(7, 3)
     print()
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
     expected = 44
-    answer = problem1a(5, 40)
+    answer = problem1b(5, 40)
     print()
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     expected = 1
-    answer = problem1a(2, 1)
+    answer = problem1b(2, 1)
     print()
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
     expected = 5
-    answer = problem1a(3, 5)
+    answer = problem1b(3, 5)
     print()
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
 
 def problem1b(m, f):
+
+
     """
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
@@ -249,11 +251,12 @@ def problem1b(m, f):
 
     count = 0
 
-    for k in range(m-1, (m*f)+1):
-        if is_prime(k):
+    for k in range((m*f+1)-(m)):
+        if is_prime(k+m):
             count = count +1
 
     return count
+
 
 
 def run_test_problem1c():
