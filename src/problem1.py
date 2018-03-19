@@ -167,8 +167,8 @@ def problem1a(m, n):
     # ------------------------------------------------------------------
     import math
     total = 0
-    for k in range (m**2, n**2+1):
-        total = total + math.sin(k)
+    for k in range (n**2+1- m**2):
+        total = total + math.sin(k+m**2)
     return total
 
 
@@ -354,9 +354,9 @@ def problem1c(n):
     # ------------------------------------------------------------------
 
     total = 1
-    for k in range(2,n+1):
-        if is_prime(k):
-            total = total*k
+    for k in range((n-1)):
+        if is_prime(k+2):
+            total = total*(k+2)
         sum_of_digits(total)
 
     return sum_of_digits(total)
