@@ -102,7 +102,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -191,7 +191,7 @@ def problem2b(rectangle, n, delta, window):
       :type win:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -203,11 +203,16 @@ def problem2b(rectangle, n, delta, window):
     rectangle.attach_to(window)
     window.render()
     for k in range(n):
-        new_corner = rg.Point(k*delta*rectangle.corner_1.x, k*2*delta*rectangle.corner_1.y)
-        new_corner_2 = rg.Point(k*delta*rectangle.corner_2.x, k*2*delta*rectangle.corner_2.y)
-        rectangle1 = rg.Rectangle(new_corner, new_corner_2)
-        rectangle1.attach_to(window)
+        x = rectangle.get_upper_left_corner().x - k*delta
+        y = rectangle.get_upper_left_corner().y - k*delta
+        x2 = rectangle.get_lower_right_corner().x +k*delta
+        y2 = rectangle.get_lower_right_corner().y +k*delta
+        corner_1 = rg.Point(x, y)
+        corner_2 = rg.Point(x2, y2)
+        new_rect = rg.Rectangle(corner_1, corner_2)
+        new_rect.attach_to(window)
         window.render()
+
 
 
 
