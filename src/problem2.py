@@ -192,7 +192,7 @@ def problem2b(rectangle, n, delta, window):
     """
     # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
-    #          Tests have been written for you (above).
+    #          Tests have been written for you (above)
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
