@@ -114,11 +114,8 @@ def problem2a(circle, rectangle, window):
     rectangle.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
-    if rectangle.corner_1.x < rectangle.corner_2.x:
-        line = rg.Line(rectangle.corner_1, rectangle.corner_2)
-    else:
-        line = rg.Line(rectangle.corner_2, rectangle.corner_1)
-    line.arrow = 'first'
+    line = rg.Line(rectangle.get_upper_right_corner(), rectangle.get_lower_left_corner())
+    line.arrow = 'last'
     line.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
@@ -206,10 +203,10 @@ def problem2b(rectangle, n, delta, window):
     rectangle.attach_to(window)
     window.render()
     for k in range(n):
-        new_corner = rg.Point(k*2*delta*rectangle.corner_1.x, k*2*delta*rectangle.corner_1.y)
-        new_corner_2 = rg.Point(k*2*delta*rectangle.corner_2.x, k*2*delta*rectangle.corner_2.y)
-        rectangle = rg.Rectangle(new_corner, new_corner_2)
-        rectangle.attach_to(window)
+        new_corner = rg.Point(k*delta*rectangle.corner_1.x, k*2*delta*rectangle.corner_1.y)
+        new_corner_2 = rg.Point(k*delta*rectangle.corner_2.x, k*2*delta*rectangle.corner_2.y)
+        rectangle1 = rg.Rectangle(new_corner, new_corner_2)
+        rectangle1.attach_to(window)
         window.render()
 
 
